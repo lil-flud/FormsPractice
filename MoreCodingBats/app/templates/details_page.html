@@ -1,0 +1,11 @@
+{% extends 'home.html' %}{% block content %}
+
+<form action="{% url 'details' name %}" method="POST">
+  {% csrf_token %}
+  <h2>{{ name }}</h2>
+  {{ form.as_p }}
+  <button>Get Result!</button>
+</form>
+{% if answer is not None %}
+<p>Result: {{ answer }}</p>
+{% endif %} {% endblock content %}

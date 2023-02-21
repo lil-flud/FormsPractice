@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>More CodingBats using Django!</title>
+  </head>
+  <body>
+    <nav>
+      <h2><a href="{% url 'home' %}">Back To Home Page!</a></h2>
+    </nav>
+    {% block content %}
+    <h1>Here is our selection of CodingBats:</h1>
+
+    {% for each in choices %}
+
+    <ul>
+      <li>
+        <a href="{% url 'details' each %}">{{ each }}</a>
+      </li>
+    </ul>
+
+    {% endfor %} {% endblock content %}
+  </body>
+</html>
